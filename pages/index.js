@@ -1,7 +1,11 @@
-//  @next/next/no-img-element
 import { useState } from "react";
+import Image from 'next/image'
 import Swal from "sweetalert2";
 import { checkEmail, loginURI, signupURI } from "../src/api";
+
+import imageOne from '../public/assets/img/one.jpg'
+import imageTwo from '../public/assets/img/two.jpg'
+import imageThree from '../public/assets/img/three.jpg'
 
 const Home = () => {
 
@@ -48,7 +52,7 @@ const Home = () => {
   return (
     <div>
       <nav className="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
-        <div className="container"><a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000" href="#">Brand</a><button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
+        <div className="container"><a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000" href="/">Kwahu Rentals</a><button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><a className="nav-link" data-aos="fade-left" data-aos-duration="1500" data-toggle="modal" data-target="#signup" type="button">Sign Up</a></li>
@@ -73,9 +77,9 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2">
-              <div className="p-5">
-                <img className="img-thumbnail img-fluid" data-aos="fade-left" data-aos-duration="1100" src="assets/img/one.jpg" loading="lazy" />
-                </div>
+              <div className="p-5" style={{ height: '300px' }}>
+                <Image className="img-thumbnail img-fluid" data-aos="fade-left" data-aos-duration="1100" src={imageOne} layout="fill" objectFit='contain' />
+              </div>
             </div>
             <div className="col-lg-6 order-lg-1">
               <div className="p-5">
@@ -90,7 +94,8 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-1">
-              <div className="p-5"><img className="img-thumbnail img-fluid" data-aos="fade-right" data-aos-delay="200" src="assets/img/two.jpg" loading='lazy' /></div>
+              <div className="p-5" style={{height: '300px'}}>
+                <Image className="img-thumbnail img-fluid" data-aos="fade-right" data-aos-delay="200" src={imageTwo} layout='fill' objectFit='contain' /></div>
             </div>
             <div className="col-lg-6 order-lg-2">
               <div className="p-5">
@@ -105,7 +110,8 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2">
-              <div className="p-5"><img className="rounded-circle img-fluid" data-aos="fade-left" src="assets/img/03.jpg" loading='lazy' /></div>
+              <div className="p-5 rounded" style={{ height: '300px' }}>
+                <Image className="rounded-circle img-fluid mb-5" data-aos="fade-left" src={imageThree} layout='fill' objectFit='contain' /></div>
             </div>
             <div className="col-lg-6 order-lg-1">
               <div className="p-5">
@@ -118,7 +124,7 @@ const Home = () => {
       </section>
       <footer className="py-5 bg-black">
         <div className="container">
-          <p className="text-center text-white m-0 small">Copyright&nbsp;© Brand 2021</p>
+          <p className="text-center text-white m-0 small">Copyright&nbsp;© Kwahu Rentals 2021</p>
         </div>
       </footer>
       <div className="modal fade" role="dialog" tabIndex="-1" id="login">
@@ -173,7 +179,6 @@ const Home = () => {
                 {
                   isLoading ? <button className="btn btn-primary" type="button" disabled>
                     <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    Loading...
                   </button> : <button className="btn btn-primary" type="submit">Sign Up</button>
                 }
               </div>
