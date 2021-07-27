@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image'
+import Link from 'next/link'
 import Swal from "sweetalert2";
 import { checkEmail, loginURI, signupURI } from "../src/api";
 
@@ -52,7 +53,11 @@ const Home = () => {
   return (
     <div>
       <nav className="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
-        <div className="container"><a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000" href="/">Kwahu Rentals</a><button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
+        <div className="container">
+          <Link href='/'>
+          <a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000">Kwahu Rentals</a>
+          </Link>
+          <button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><a className="nav-link" data-aos="fade-left" data-aos-duration="1500" data-toggle="modal" data-target="#signup" type="button">Sign Up</a></li>
