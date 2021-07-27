@@ -41,7 +41,7 @@ const UploadPortal = () => {
         e.preventDefault()
 
         if (!files) {
-            Swal.fire({icon: 'error', text: 'Please select images for home '})
+            Swal.fire({ icon: 'error', text: 'Please select images for home ' })
             return
         }
 
@@ -52,12 +52,12 @@ const UploadPortal = () => {
 
         if (home.rooms < 1) {
             Swal.fire({ icon: 'error', text: 'Sorry rooms cannot be 0' })
-            return 
+            return
         }
 
         if (home.price < 1) {
             Swal.fire({ icon: 'error', text: 'Enter valid price' })
-            return 
+            return
         }
 
         setIsLoading(true)
@@ -92,17 +92,17 @@ const UploadPortal = () => {
 
     return (<>
         <Navbar />
-        <div class="display-4 text-center">Upload your home</div>
-        <div class="container">
-            <div class="row justify-content-center mt-5">
-                <div class="col-12 col-md-6">
+        <div className="display-4 text-center">Upload your home</div>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-12 col-md-6">
                     <form onSubmit={upload}>
-                        <div class="form-group">
-                            <input type='file' multiple class='form-control' onChange={imageChangeHandler} />
+                        <div className="form-group">
+                            <input type='file' multiple className='form-control' onChange={imageChangeHandler} />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label>Town</label>
-                            <select class="form-control" onChange={e => handleTownChange(e)} value={town}>
+                            <select className="form-control" onChange={e => handleTownChange(e)} value={town}>
                                 <option disabled value=''>-- Select Town --</option>
                                 {
                                     towns.length > 0 ? towns.map(town => (
@@ -111,9 +111,9 @@ const UploadPortal = () => {
                                 }
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label>Suburb</label>
-                            <select class="form-control" onChange={e => setHome({ ...home, suburb: e.target.value })} value={home.suburb}>
+                            <select className="form-control" onChange={e => setHome({ ...home, suburb: e.target.value })} value={home.suburb}>
                                 <option disabled value=''>-- Select Suburb --</option>
                                 {
                                     suburbs.length > 0 ? suburbs.map(sub => (
@@ -123,24 +123,24 @@ const UploadPortal = () => {
                             </select>
                         </div>
 
-                        <div class="row">
-                            <div class="form-group col">
+                        <div className="row">
+                            <div className="form-group col">
                                 <label>Number of Rooms</label>
-                                <input class="form-control" type="number" value={home.rooms} onChange={e => setHome({ ...home, rooms: e.target.value })} />
+                                <input className="form-control" type="number" value={home.rooms} onChange={e => setHome({ ...home, rooms: e.target.value })} />
                             </div>
-                            <div class="form-group col">
+                            <div className="form-group col">
                                 <label>Price </label>
-                                <input class="form-control" type="number" value={home.price} onChange={e => setHome({ ...home, price: e.target.value })} />
+                                <input className="form-control" type="number" value={home.price} onChange={e => setHome({ ...home, price: e.target.value })} />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" onChange={e => setHome({ ...home, description: e.target.value })}>{home.description}</textarea>
+                            <textarea className="form-control" onChange={e => setHome({ ...home, description: e.target.value })} value={home.description}></textarea>
                         </div>
-                        {isLoading ? <button class="btn btn-primary mb-5" type="button" disabled>
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        {isLoading ? <button className="btn btn-primary mb-5" type="button" disabled>
+                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         </button> :
-                            <button class="btn btn-primary mb-5" type="submit">Upload</button>}
+                            <button className="btn btn-primary mb-5" type="submit">Upload</button>}
                     </form>
                 </div>
             </div>
