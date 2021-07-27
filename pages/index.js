@@ -1,3 +1,4 @@
+//  @next/next/no-img-element
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { checkEmail, loginURI, signupURI } from "../src/api";
@@ -72,7 +73,9 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2">
-              <div className="p-5"><img className="img-thumbnail img-fluid" data-aos="fade-left" data-aos-duration="1100" src="assets/img/one.jpg" loading="lazy" /></div>
+              <div className="p-5">
+                <img className="img-thumbnail img-fluid" data-aos="fade-left" data-aos-duration="1100" src="assets/img/one.jpg" loading="lazy" />
+                </div>
             </div>
             <div className="col-lg-6 order-lg-1">
               <div className="p-5">

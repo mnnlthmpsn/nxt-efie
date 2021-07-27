@@ -1,3 +1,4 @@
+//  @next/next/no-img-element
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Navbar from "../comps/nav";
