@@ -36,8 +36,8 @@ const Dashboard = () => {
                 <section>
                     <div className="container">
                         {
-                            homes.length > 0 ? homes.map(home => (
-                                <figure className="snip1563"><img src={home?.images[0]?.url} alt="sample59" />
+                            homes.length > 0 ? homes.map((home, index) => (
+                                <figure className="snip1563" key={index}><img src={home?.images[0]?.url} alt="sample59" />
                                     <figcaption>
                                         <h3>{home.suburb.title}</h3>
                                         <p>{home.suburb.description} </p>
