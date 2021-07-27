@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const apiURL = 'http://localhost:1337'
+const apiURL = 'https://efi-back.herokuapp.com'
 
 export const loginURI = async params => {
     try {

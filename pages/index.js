@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useRouter } from 'next/router'
 import Swal from "sweetalert2";
 import { checkEmail, loginURI, signupURI } from "../src/api";
 
