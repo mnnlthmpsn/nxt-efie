@@ -44,7 +44,11 @@ const Home = () => {
     e.preventDefault()
     try {
       const res = await loginURI({ identifier: user.email, password: user.password })
-      !!res.jwt ? window.location.replace('/dashboard') : Swal.fire({ icon: 'error', text: 'Error logging in' }).then(() => setIsLoading(false))
+      !!res.jwt
+        ? (
+          localStorage.setItem('user', JSON.stringify(res)),
+          window.location.replace('/dashboard'))
+        : Swal.fire({ icon: 'error', text: 'Error logging in' }).then(() => setIsLoading(false))
     } catch (err) {
       Swal.fire({ icon: 'error', text: err.message }).then(() => setIsLoading(false))
     }
@@ -55,7 +59,7 @@ const Home = () => {
       <nav className="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
         <div className="container">
           <Link href='/'>
-          <a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000">Kwahu Rentals</a>
+            <a className="navbar-brand" data-aos="fade-right" data-aos-duration="1000">Kwahu Rentals</a>
           </Link>
           <button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
@@ -99,7 +103,7 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-1">
-              <div className="p-5" style={{height: '300px'}}>
+              <div className="p-5" style={{ height: '300px' }}>
                 <Image className="img-thumbnail img-fluid" data-aos="fade-right" data-aos-delay="200" src={imageTwo} layout='fill' objectFit='contain' /></div>
             </div>
             <div className="col-lg-6 order-lg-2">
