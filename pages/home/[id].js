@@ -18,6 +18,13 @@ const HomeDetail = () => {
     return (
         <>
             <Navbar />
+            <div className='row justify-content-center pt-5 mt-5'>
+                <div class="col-6">
+                    <p className="display-4 text-center">
+                        Feature Under Construction. Please check back later
+                    </p>
+                </div>
+            </div>
         </>
     );
 }
