@@ -64,7 +64,7 @@ const Home = () => {
           <button data-toggle="collapse" className="navbar-toggler" data-target="#navbarResponsive"><span className="navbar-toggler-icon"></span></button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item"><a className="nav-link" data-aos="fade-left" data-aos-duration="1500" data-toggle="modal" data-target="#signup" type="button">Sign Up</a></li>
+              {/* <li className="nav-item"><a className="nav-link" data-aos="fade-left" data-aos-duration="1500" data-toggle="modal" data-target="#signup" type="button">Sign Up</a></li> */}
               <li className="nav-item"><button className="btn btn-primary" data-aos="fade-left" data-aos-duration="550" data-aos-delay="500" data-toggle="modal" data-target="#login" type="button">LOGIN</button></li>
             </ul>
           </div>
