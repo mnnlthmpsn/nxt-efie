@@ -129,7 +129,7 @@ const UploadPortal = () => {
                                 <input className="form-control" type="number" value={home.rooms} onChange={e => setHome({ ...home, rooms: e.target.value })} />
                             </div>
                             <div className="form-group col">
-                                <label>Price </label>
+                                <label>Price (GHc/monthly)</label>
                                 <input className="form-control" type="number" value={home.price} onChange={e => setHome({ ...home, price: e.target.value })} />
                             </div>
                         </div>
